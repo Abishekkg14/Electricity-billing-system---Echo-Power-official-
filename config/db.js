@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-        const mongoURI = 'mongodb://127.0.0.1:27017/electricitybilling';
-        console.log('Attempting to connect to MongoDB...');
-        
+        const mongoURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/electricitybilling';
+        console.log('Attempting to connect to MongoDB at', mongoURI);
+
         await mongoose.connect(mongoURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
-        
+
         console.log(`MongoDB connected successfully to ${mongoURI}`);
     } catch (error) {
         console.error('MongoDB connection error details:', {
