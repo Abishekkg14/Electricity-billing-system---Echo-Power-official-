@@ -15,7 +15,7 @@
     <script>
         async function testConnection() {
             try {
-                const response = await fetch('http://localhost:3000/api/test-db');
+                const response = await fetch('https://electricity-billing-system-echo-power-2690.onrender.com/api/test-db');
                 const data = await response.json();
                 const resultDiv = document.getElementById('result');
                 

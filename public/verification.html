@@ -30,7 +30,7 @@
             
             try {
                 // Check user registration
-                const response = await fetch(`http://localhost:3000/api/verify/${email}`);
+                const response = await fetch(`https://electricity-billing-system-echo-power-2690.onrender.com/api/verify/${email}`);
                 const data = await response.json();
                 const resultDiv = document.getElementById('result');
                 
@@ -45,7 +45,7 @@
                     `;
 
                     // Get database stats
-                    const statsResponse = await fetch('http://localhost:3000/api/admin/verify-db');
+                    const statsResponse = await fetch('https://electricity-billing-system-echo-power-2690.onrender.com/api/admin/verify-db');
                     const statsData = await statsResponse.json();
                     
                     document.getElementById('userStats').innerHTML = `

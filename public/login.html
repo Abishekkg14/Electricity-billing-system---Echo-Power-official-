@@ -168,7 +168,7 @@
             console.log('Submitting login form:', { username, password }); // Debug log
 
             try {
-                const response = await fetch('/api/login', {  // Changed to relative path
+                const response = await fetch('https://electricity-billing-system-echo-power-2690.onrender.com/api/login', {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json',
@@ -200,7 +200,7 @@
             const testMsg = document.getElementById('testMsg');
             testMsg.textContent = 'Testing...';
             try {
-                const response = await fetch('/api/test-server');  // Relative path
+                const response = await fetch('https://electricity-billing-system-echo-power-2690.onrender.com/api/test-server');
                 const data = await response.json();
                 console.log('Test response:', data);
                 testMsg.textContent = 'Server connected successfully';
